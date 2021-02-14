@@ -10,7 +10,8 @@ let sliders = [];
 // If this key doesn't work
 // Find the name in the url and go to their website
 // to create your own api key
-const KEY = "15674931-a9d714b6e9d654524df198e00&q";
+const KEY = "16419323-eecbcfc05a072d34ad97cfb0d&";
+// const KEY = "15674931-a9d714b6e9d654524df198e00&q";
 
 // show images
 const showImages = (images) => {
@@ -141,3 +142,20 @@ const toggleSpinner = () => {
   const spinner = document.getElementById("spiner");
   spinner.classList.toggle("d-flex");
 };
+
+//Adding dark mode
+function darkMode() {
+  let mode = document.getElementById("mode");
+  mode.innerHTML.toggle = "dark";
+  let element = document.body;
+  element.classList.toggle("dark-mode");
+}
+//Adding light or black text
+document.getElementById("dark_light").addEventListener("click", () => {
+  var x = document.getElementById("mode");
+  if (x.innerHTML === "Light") {
+    x.innerHTML = "Dark";
+  } else {
+    x.innerHTML = "Light";
+  }
+});
