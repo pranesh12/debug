@@ -68,7 +68,13 @@ const createSlider = () => {
   document.querySelector(".main").style.display = "block";
   // hide image aria
   imagesArea.style.display = "none";
-  const duration = document.getElementById("duration").value || 1000;
+  let duration = document.getElementById("duration").value || 2000;
+  if (duration <= -1) {
+    duration = 2000;
+  } else {
+    duration = document.getElementById("duration").value || 2000;
+  }
+
   sliders.forEach((slide) => {
     let item = document.createElement("div");
     item.className = "slider-item";
