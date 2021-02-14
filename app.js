@@ -16,6 +16,7 @@ const KEY = "15674931-a9d714b6e9d654524df198e00&q";
 const showImages = (images) => {
   imagesArea.style.display = "block";
   gallery.innerHTML = "";
+  toggleSpinner();
   // show gallery title
   galleryHeader.style.display = "flex";
   images.forEach((image) => {
@@ -116,6 +117,7 @@ const changeSlide = (index) => {
 };
 
 searchBtn.addEventListener("click", function () {
+  toggleSpinner();
   document.querySelector(".main").style.display = "none";
   clearInterval(timer);
   const search = document.getElementById("search");
@@ -127,7 +129,7 @@ sliderBtn.addEventListener("click", function () {
   createSlider();
 });
 
-///serarch
+///keypress event handler
 document.getElementById("search").addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
     searchBtn.click();
@@ -135,3 +137,7 @@ document.getElementById("search").addEventListener("keypress", (event) => {
 });
 
 //Extra feature spinner
+const toggleSpinner = () => {
+  const spinner = document.getElementById("spiner");
+  spinner.classList.toggle("d-flex");
+};
